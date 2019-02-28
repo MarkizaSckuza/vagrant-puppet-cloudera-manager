@@ -7,7 +7,7 @@ In Administrator shell run:
   `vagrant up`
  
 
-After installiation go to http://cm.node1.com, user `admin`, password `admin` and install cluster using CM. Detailed installiation here:
+After installiation go to http://cm.node1.com:7180, user `admin`, password `admin` and install cluster using CM. Detailed installiation here:
 
   https://www.cloudera.com/documentation/enterprise/latest/topics/install_software_cm_wizard.html#concept_qdy_mz3_wcb
 
