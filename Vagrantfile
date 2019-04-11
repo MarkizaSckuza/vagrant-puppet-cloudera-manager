@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :master do |master|
     master.vm.provider :virtualbox do |v|
-      v.name = "cm.node1.com"
+      v.name = "master"
       v.customize ["modifyvm", :id, "--memory", "4096"]
     end
     master.vm.network :private_network, ip: "10.211.55.100"
@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
     # slave1.vm.box = "precise64"
     slave1.vm.box = "bento/centos-7"
     slave1.vm.provider :virtualbox do |v|
-      v.name = "cm.node2.com"
+      v.name = "slave1"
       v.customize ["modifyvm", :id, "--memory", "6144", "--cpus", "2"]
     end
     slave1.vm.network :private_network, ip: "10.211.55.101"
@@ -94,7 +94,7 @@ Vagrant.configure("2") do |config|
     # slave2.vm.box = "precise64"
     slave2.vm.box = "bento/centos-7"
     slave2.vm.provider :virtualbox do |v|
-      v.name = "cm.node3.com"
+      v.name = "slave2"
       v.customize ["modifyvm", :id, "--memory", "6144", "--cpus", "2"]
     end
     slave2.vm.network :private_network, ip: "10.211.55.102"
@@ -120,7 +120,7 @@ Vagrant.configure("2") do |config|
     # slave3.vm.box = "precise64"
     slave3.vm.box = "bento/centos-7"
     slave3.vm.provider :virtualbox do |v|
-      v.name = "cm.node4.com"
+      v.name = "slave3"
       v.customize ["modifyvm", :id, "--memory", "6144", "--cpus", "2"]
     end
     slave3.vm.network :private_network, ip: "10.211.55.103"
