@@ -6,21 +6,6 @@ class base_install {
 		command => '/usr/bin/yum -y update'
 	}
 
-	# package { 'wget':
-	# 	require => Exec['yum-update'],
-	# 	ensure => installed,
-	# }
-
-	# package { ['openssh', 'openssh-server', 'openssh-clients']:
-	# 	require => Exec['yum-update'],
-	# 	ensure => installed,
-	# }
-
-	package { 'git':
-	  ensure   => 'latest',
-	  provider => 'yum',
-	}
-
 	service { 'firewalld':
 		ensure => 'stopped',
 		enable => 'false'
@@ -29,8 +14,7 @@ class base_install {
 	service { 'sshd':
 	    ensure  => 'running',
 	    enable  => true,
-	    # require => Package['openssh-server'],
-	  }
+	}
 
 	File['/etc/ssh/sshd_config'] ~> Service['sshd']
 

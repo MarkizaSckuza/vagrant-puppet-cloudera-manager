@@ -1,9 +1,9 @@
-node 'vm-cluster-node1' {
+node 'cm.node1.com' {
 	include base_install
 	include mysql
 	include cloudera_install
 }
 
-node 'vm-cluster-node2', 'vm-cluster-node3', 'vm-cluster-node4' {
+node 'cm.node2.com', 'cm.node3.com', 'cm.node4.com' {
 	include base_install
 }
