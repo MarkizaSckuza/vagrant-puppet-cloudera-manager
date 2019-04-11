@@ -3,12 +3,12 @@ class cloudera_install {
 	include ::stdlib
 
 	exec { 'wget_cm':
-	  command => "/usr/bin/wget https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/cloudera-manager.repo -P /etc/yum.repos.d/",
+	  command => "/usr/bin/wget https://archive.cloudera.com/cm6/6.2.0/redhat7/yum/cloudera-manager.repo -P /etc/yum.repos.d/",
 	}
 
 	exec { 'rpm_import':
 		require => Exec['wget_cm'],
-	  	command => "/usr/bin/rpm --import https://archive.cloudera.com/cm6/6.1.0/redhat7/yum/RPM-GPG-KEY-cloudera",
+	  	command => "/usr/bin/rpm --import https://archive.cloudera.com/cm6/6.2.0/redhat7/yum/RPM-GPG-KEY-cloudera",
 	}
 
 	package { 'oracle-j2sdk1.8':
