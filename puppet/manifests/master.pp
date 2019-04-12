@@ -1,2 +1,0 @@
-include base_install
-include cloudera_install

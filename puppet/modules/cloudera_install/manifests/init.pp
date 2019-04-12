@@ -35,7 +35,7 @@ class cloudera_install {
 
 	file { "/etc/environment":
 		ensure => present,
-        content => inline_template("JAVA_HOME=/usr/java/jdk1.8.0_141-cloudera"),
+        content => inline_template("JAVA_HOME=/usr/java/jdk1.8.0_181-cloudera"),
     }
 
     exec { 'rm_prev_cert':
@@ -46,7 +46,7 @@ class cloudera_install {
 
     exec { 'enable_tls':
 		require => Exec['rm_prev_cert'],
-		environment => ["JAVA_HOME=/usr/java/jdk1.8.0_141-cloudera"],
+		environment => ["JAVA_HOME=/usr/java/jdk1.8.0_181-cloudera"],
 		command => "/opt/cloudera/cm-agent/bin/certmanager --location /opt/cloudera/CMCA setup --configure-services",
 	}
 
