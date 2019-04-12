@@ -29,7 +29,6 @@ Vagrant.configure("2") do |config|
   # Define base image
   # config.vm.box = "precise64"
   config.vm.box = "bento/centos-7"
-  # config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Manage /etc/hosts on host and VMs
   config.hostmanager.enabled = false
@@ -60,12 +59,9 @@ Vagrant.configure("2") do |config|
       puppet.manifest_file  = "./init.pp"
       puppet.options = "--verbose --debug"
   	end
-
-    # master.vm.provision :shell, :inline => $master_script
   end
 
   config.vm.define :slave1 do |slave1|
-    # slave1.vm.box = "precise64"
     slave1.vm.box = "bento/centos-7"
     slave1.vm.provider :virtualbox do |v|
       v.name = "slave1"
@@ -91,7 +87,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define :slave2 do |slave2|
-    # slave2.vm.box = "precise64"
     slave2.vm.box = "bento/centos-7"
     slave2.vm.provider :virtualbox do |v|
       v.name = "slave2"
@@ -117,7 +112,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define :slave3 do |slave3|
-    # slave3.vm.box = "precise64"
     slave3.vm.box = "bento/centos-7"
     slave3.vm.provider :virtualbox do |v|
       v.name = "slave3"
